@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "GPT Blocker",
+  "description": "Closes ChatGPT page if cant resolve regex in 15s",
+  "version": "1.0",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "styles.css"
+      ],
+      "run_at": "document_end",
+      "world": "ISOLATED"
+    }
+  ]
+}
