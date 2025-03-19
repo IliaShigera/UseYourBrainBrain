@@ -1,5 +1,3 @@
-/* Reset */
-
 * {
     padding: 0;
     margin: 0;
@@ -74,5 +72,114 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ---------------------------------------------------------------------------* /
+/* overlay */
+.fullscreen-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(10, 10, 10, 0.95); 
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    color: #ddd;
+}
 
+/* Dark theme modal */
+.modal-container {
+    width: 420px;
+    padding: 25px;
+    background: #222;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 255, 127, 0.15);
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    animation: fadeIn 0.3s ease-in-out;
+}
+ 
+/* Glow effect fro regex */
+.regex-display {
+    font-size: 1.5em;
+    color: #0f0;
+    font-weight: bold;
+    background: linear-gradient(90deg, #0f0, #0a0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glow 1.5s infinite alternate;
+}
 
+/* Input field */
+#regexInput {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.2em;
+    text-align: center;
+    border: 2px solid #0f0;
+    background: #111;
+    color: #0f0;
+    outline: none;
+    border-radius: 6px;
+    transition: all 0.2s ease-in-out;
+}
+#regexInput:focus {
+    border-color: #00ff88;
+    box-shadow: 0 0 8px rgba(0, 255, 127, 0.6);
+}
+
+/* Error message */
+#errorMsg {
+    color: #ff4444;
+    margin-top: 10px;
+    font-weight: bold;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Animated submit button */
+#submitRegexBtn {
+    margin-top: 15px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(90deg, #0f0, #0a0);
+    color: black;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+#submitRegexBtn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(90deg, #00ff88, #007f44);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Glowing text effect */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 8px rgba(0, 255, 127, 0.6);
+    }
+    to {
+        text-shadow: 0 0 16px rgba(0, 255, 127, 1);
+    }
+}
+
+/* Disable scrolling */
+.no-scroll {
+    overflow: hidden;
+}
